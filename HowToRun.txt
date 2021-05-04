@@ -1,0 +1,10 @@
+1.download code
+2.Run Command npm Install
+3.Run command ionic serve 
+4.Run ionic Build
+5.Run ionic cap add android
+6.Run ionic cap run android
+
+
+user name=user@gmail.com
+password=123

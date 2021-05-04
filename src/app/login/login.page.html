@@ -1,0 +1,96 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title class="PageTitle">Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class=" animate__animated animate__zoomIn" style="text-align: center">
+    <img class="img" src="../../assets/images/daccess.png" />
+  </div>
+  <h1 class="ion-text-center title">Log In</h1>
+<form [formGroup]="form"  (ngSubmit)=" signin()">
+  <div class="animate__animated animate__fadeInUp ">
+  <ion-label  position="stacked"
+      >Select Role<span style="color: red">*</span>
+    </ion-label>
+    <ion-select
+ 
+    formControlName="role"
+      name="role"
+      [(ngModel)]="user.role"
+      placeholder="Select Role"
+    
+    >
+      <ion-select-option  value="Admin"
+        >Admin</ion-select-option
+      >
+
+      <ion-select-option  value="User"
+      >User</ion-select-option
+    > 
+    </ion-select>
+    <div *ngFor="let validation of validation_msg.role">
+      <div
+        *ngIf="role.hasError(validation.type) && (role.dirty || role.touched || form.invalid) "
+      >
+        <p class="ErrorMsgStyle">*{{validation.message }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="animate__animated animate__fadeInUp ">
+    <ion-label  position="stacked"
+        >User Name<span style="color: red">*</span>
+      </ion-label>
+      <ion-input
+      name="username"
+      formControlName="username"
+      [(ngModel)]="user.username"
+      placeholder="Username"
+      type="text"
+    >
+    </ion-input>
+    <div *ngFor="let validation of validation_msg.username">
+      <div
+        *ngIf="username.hasError(validation.type) && (username.dirty || username.touched || form.invalid)"
+      >
+        <p class="ErrorMsgStyle">*{{validation.message }}</p>
+      </div>
+    </div>
+    </div>
+
+
+    <div class="animate__animated animate__fadeInUp ">
+      <ion-label  position="stacked"
+          >Password<span style="color: red">*</span>
+        </ion-label>
+        <ion-input
+      name="password"
+      formControlName="password"
+      [(ngModel)]="user.password"
+      placeholder="password"
+      type="password"
+    >
+    </ion-input>
+    <div *ngFor="let validation of validation_msg.password">
+      <div
+        *ngIf="password.hasError(validation.type) && (password.dirty || password.touched || form.invalid)"
+      >
+        <p class="ErrorMsgStyle">*{{validation.message }}</p>
+      </div>
+    </div>
+      </div>
+  <ion-button class="btn-login  animate__animated animate__fadeInUp "
+   
+    mode="md"
+    expand="full"
+    shape="round"
+    fill="solid"
+    type="submit"
+  >
+    Login
+  </ion-button>
+</form>
+<p>Username=user@gmail.com   Password=123</p>
+</ion-content>

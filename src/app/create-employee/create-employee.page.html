@@ -1,0 +1,148 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title class="PageTitle">Employee list</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <br>
+  <div *ngIf="employees.length<maxEmployee">
+  <form [formGroup]="form"  (ngSubmit)=" Save(form)">
+    <div class="divmargin">
+    <ion-label  position="stacked"
+        >Employee Name<span style="color: red">*</span>
+      </ion-label>
+      <ion-input
+      name="employeeName"
+      formControlName="employeeName"
+     
+      placeholder="Employee Name"
+      type="text"
+    >
+    </ion-input>
+      <div *ngFor="let validation of validation_msg.employeeName">
+        <div
+          *ngIf="employeeName.hasError(validation.type) && (employeeName.dirty || employeeName.touched || form.invalid) "
+        >
+          <p class="ErrorMsgStyle">*{{validation.message }}</p>
+        </div>
+      </div>
+    </div>
+  
+    <div class="divmargin">
+      <ion-label  position="stacked"
+          >Employee Email<span style="color: red">*</span>
+        </ion-label>
+        <ion-input
+        name="employeeEmail"
+        formControlName="employeeEmail"
+
+        placeholder="Employee Email"
+        type="text"
+      >
+      </ion-input>
+      <div *ngFor="let validation of validation_msg.employeeEmail">
+        <div
+          *ngIf="employeeEmail.hasError(validation.type) && (employeeEmail.dirty || employeeEmail.touched || form.invalid)"
+        >
+          <p class="ErrorMsgStyle">*{{validation.message }}</p>
+        </div>
+      </div>
+      </div>
+  
+  
+      <div class="divmargin">
+        <ion-label  position="stacked"
+            >Employee Address<span style="color: red">*</span>
+          </ion-label>
+          <ion-textarea rows="6"
+        name="employeeAddress"
+        formControlName="employeeAddress"
+       
+        placeholder="Employee Address"
+        type="text"
+      >
+      </ion-textarea>
+      <div *ngFor="let validation of validation_msg.employeeAddress">
+        <div
+          *ngIf="employeeAddress.hasError(validation.type) && (employeeAddress.dirty || employeeAddress.touched || form.invalid)"
+        >
+          <p class="ErrorMsgStyle">*{{validation.message }}</p>
+        </div>
+      </div>
+        </div>
+
+
+        <div class="divmargin">
+          <ion-label  position="stacked"
+              >Employee Designation<span style="color: red">*</span>
+            </ion-label>
+            <ion-input
+          name="employeeDesignation"
+          formControlName="employeeDesignation"
+         
+          placeholder="Designation"
+          type="text"
+        >
+        </ion-input>
+        <div *ngFor="let validation of validation_msg.employeeDesignation">
+          <div
+            *ngIf="employeeDesignation.hasError(validation.type) && (employeeDesignation.dirty || employeeDesignation.touched || form.invalid)"
+          >
+            <p class="ErrorMsgStyle">*{{validation.message }}</p>
+          </div>
+        </div>
+          </div>
+
+        
+    <ion-button class="btn-login   "
+     
+      mode="md"
+      expand="full"
+      shape="round"
+      fill="solid"
+      type="submit"
+    >
+     Save
+    </ion-button>
+  </form>
+  <div *ngIf="showTable==1" >
+    <div class="scroll" scrollX="true">
+  
+      <table id="servicelist">
+        <tr>
+          <th>Sr No</th>
+          <th>Employee Name </th>
+          <th>Email&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+          <th>Address</th>
+          <th>Designation</th>
+        
+        </tr>
+        <tr  *ngFor="let e of employees;let i = index" >
+         
+          <td>{{i+1}}</td>
+          <td style="width: auto;">{{e.employeeName}}</td>
+          <td>{{e.employeeEmail}}</td>
+          <td>{{e.employeeAddress}}</td>
+          <td>{{e.employeeDesignation}}</td>
+        </tr>
+        
+      </table>
+  
+    </div>
+  </div>
+</div>
+<div *ngIf="employees.length>=10">
+
+  <ion-button class="btn-login   "
+     
+  mode="md"
+  expand="full"
+  shape="round"
+  fill="solid"
+  (click)="clear()"
+>
+ clear employee List
+</ion-button>
+</div>
+</ion-content>

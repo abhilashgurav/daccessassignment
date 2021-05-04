@@ -1,0 +1,7 @@
+{
+  "name": "DaccessTest",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

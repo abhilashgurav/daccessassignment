@@ -1,0 +1,160 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+@import '~animate.css/animate.min.css';
+
+.PageTitle{
+    text-align: center;
+}
+
+ion-select {
+    background: #d7d8dac7;
+    font-size: 15px;
+    --padding-top: 13px;
+    border-radius: 22px;
+   
+    margin-bottom: 8px;
+    border: 1px solid #666666;
+  }
+
+  ion-input,ion-textarea{
+    background: #d7d8dac7 !important    ;
+   // height: 44px;
+    border-radius: 22px;
+    --padding-start: 24px;
+    --padding-top: 16px;
+    --padding-bottom: 13px;
+    
+    font-size: 15px;
+    margin-bottom: 8px;
+    
+    border: 1px solid #666666;
+  }
+  ion-content{
+    --padding-end: 25px;
+    --padding-start: 25px;
+  }
+
+  .ErrorMsgStyle{
+color: red;
+font-size: 12px;
+  }
+
+  .btn-login {
+   
+    height: 44px;
+   
+    font-size: 16px;
+    --box-shadow: none;
+    
+  
+  }
+  
+.animate__animated {
+    --animate-duration: .0s;
+  
+    &:nth-child(1) {
+        --animate-duration: .15s;
+    }
+  
+    &:nth-child(2) {
+        --animate-duration: .2s;
+    }
+  
+    &:nth-child(3) {
+        --animate-duration: .25s;
+    }
+  
+    &:nth-child(4) {
+        --animate-duration: .3s;
+    }
+  
+    &:nth-child(5) {
+        --animate-duration: .35s;
+    }
+  
+    &:nth-child(6) {
+        --animate-duration: .4s;
+    }
+  
+    &:nth-child(7) {
+        --animate-duration: .45s;
+    }
+  
+    &:nth-child(8) {
+        --animate-duration: .5s;
+    }
+  
+    &:nth-child(9) {
+        --animate-duration: .55s;
+    }
+  
+    &:nth-child(10) {
+        --animate-duration: .6s;
+    }
+  
+    &:nth-child(11) {
+        --animate-duration: .65s;
+    }
+  
+    &:nth-child(12) {
+        --animate-duration: .7s;
+    }
+  
+    &:nth-child(13) {
+        --animate-duration: .5s;
+    }
+  
+    &:nth-child(14) {
+        --animate-duration: .5s;
+    }
+  
+    &:nth-child(15) {
+        --animate-duration: .5s;
+    }
+
+
+    
+  }
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 0px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+  .scroll {
+    overflow: auto;
+  }

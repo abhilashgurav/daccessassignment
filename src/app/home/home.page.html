@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title class="PageTitle">
+     Dashboard
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <h1 style="text-align: center;">Menus</h1>
+  <div class="btn-login  animate__animated animate__fadeInUp " *ngFor="let m of menus">
+<ion-button (click)="goTo(m.url)"  expand="full"
+shape="round"  >
+{{m.menuName}}
+</ion-button>
+  </div>
+  <div class="btn-login  animate__animated animate__fadeInUp " >
+    <ion-button (click)="logOut()"  expand="full"
+    shape="round"  >
+   Log Out
+    </ion-button>
+      </div>
+  
+</ion-content>
